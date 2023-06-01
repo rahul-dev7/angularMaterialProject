@@ -16,9 +16,25 @@
         <mat-label>Attachment</mat-label>
         <input matInput placeholder="Attachment">
     </mat-form-field>
-    <mat-form-field appearance="outline" class="w-100">
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput>
+    <mat-form-field  appearance="outline" class="w-100">
+    <div>
+      <mat-toolbar>
+        <!-- Display files names -->
+        <input matInput  name="name" [(ngModel)]="fileAttr" readonly />
+        <!-- Browse Button -->
+        <button mat-flat-button color="primary">Browse File</button>
+      </mat-toolbar>
+      <!-- Fetch selected filed on change -->
+      <input
+        type="file"
+        #fileInput
+        id="uploadFile"
+        (change)="uploadFileEvt($event)"
+        name="uploadFile"
+        multiple="multiple"
+        accept="image/*"
+      />
+    </div>
   </mat-form-field>
 </div>
 <div mat-dialog-actions class="float-right">
