@@ -29,6 +29,7 @@ export class HomeComponent implements AfterViewInit{
   @ViewChild(MatPaginator) paginator: MatPaginator;
   animal: string = '';
   name: string = '';
+ 
 
 
   constructor(public dialog: MatDialog) {}

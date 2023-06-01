@@ -14,6 +14,7 @@ export interface DialogData {
 export class AddEditRecordComponent {
   @ViewChild('fileInput') fileInput: ElementRef;
   fileAttr = 'Choose File';
+  todayDate:Date = new Date();
 
   constructor(public dialogRef: MatDialogRef<AddEditRecordComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,) {}
