@@ -44,4 +44,7 @@ export class HomeComponent {
       this.animal = result;
     });
   }
+
+
+  
 }
