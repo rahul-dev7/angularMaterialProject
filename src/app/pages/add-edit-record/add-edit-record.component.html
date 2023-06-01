@@ -6,18 +6,19 @@
     </mat-form-field>
     <mat-form-field appearance="outline" class="w-100">
         <mat-label>Start Date</mat-label>
-        <input matInput placeholder="Start Date">
+        <input matInput [matDatepicker]="startDate"  [min]="todayDate" placeholder="Start Date">
+        <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
+        <mat-datepicker #startDate></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="outline" class="w-100">
         <mat-label>Due Date</mat-label>
-        <input matInput placeholder="Due Date">
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Attachment</mat-label>
-        <input matInput placeholder="Attachment">
+        <input matInput [matDatepicker]="dueDate" [min]="todayDate"  placeholder="Due Date">
+        <mat-datepicker-toggle matIconSuffix [for]="dueDate"></mat-datepicker-toggle>
+        <mat-datepicker #dueDate></mat-datepicker>
     </mat-form-field>
     <mat-form-field  appearance="outline" class="w-100">
     <div>
+      <mat-label>Attachment</mat-label>
       <mat-toolbar>
         <!-- Display files names -->
         <input matInput  name="name" [(ngModel)]="fileAttr" readonly />
@@ -38,6 +39,6 @@
   </mat-form-field>
 </div>
 <div mat-dialog-actions class="float-right">
-  <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Submit</button>
+  <button mat-raised-button (click)="onNoClick()" >Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="data.animal" cdkFocusInitial color="primary">Submit</button>
 </div>

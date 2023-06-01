@@ -8,7 +8,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -21,7 +24,9 @@ import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
     MatTableModule,
     MatToolbarModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatCardModule,
@@ -31,7 +36,10 @@ import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
     MatButtonModule,
     MatTableModule,
     MatToolbarModule,
-    MatDialogModule,MatPaginatorModule
+    MatDialogModule,
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class SharedModule { }
