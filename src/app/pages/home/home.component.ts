@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddEditRecordComponent } from '../add-edit-record/add-edit-record.component';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -26,4 +28,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class HomeComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  animal: string = '';
+  name: string = '';
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AddEditRecordComponent, {
+      data: {name: 'rws', animal: 'sjsjjs'},
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
 }

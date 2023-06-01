@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './components/header/header.component';
+import { AddEditRecordComponent } from './add-edit-record/add-edit-record.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     LayoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddEditRecordComponent
   ],
   imports: [
     CommonModule,
