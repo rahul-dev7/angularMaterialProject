@@ -4,6 +4,7 @@ import { AddEditRecordComponent } from '../add-edit-record/add-edit-record.compo
 import { RecordModel } from 'src/app/common/models/record';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const ELEMENT_DATA: RecordModel[] = [
   {id: 1, title: 'Hydrogen', startDate: '22-05-2023', dueDate: '22-05-2023', attachment: ''},
@@ -32,7 +33,7 @@ export class HomeComponent implements AfterViewInit{
  
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private _snackBar: MatSnackBar) {}
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -50,6 +51,8 @@ export class HomeComponent implements AfterViewInit{
     });
   }
 
-
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
   
 }
