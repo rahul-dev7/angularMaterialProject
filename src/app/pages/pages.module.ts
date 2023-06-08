@@ -9,7 +9,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddEditRecordComponent } from './add-edit-record/add-edit-record.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     HomeComponent,
@@ -22,7 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PagesRoutingModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class PagesModule { }

@@ -1,31 +1,33 @@
 <h1 mat-dialog-title>Add Edit Record</h1>
-<div mat-dialog-content>
+<div [formGroup]="addEditForm">
+  <div mat-dialog-content> 
     <mat-form-field appearance="outline" class="w-100">
         <mat-label>Title</mat-label>
-        <input matInput placeholder="Title">
+        <input matInput placeholder="Title" formControlName="title">
     </mat-form-field>
     <mat-form-field appearance="outline" class="w-100">
         <mat-label>Start Date</mat-label>
-        <input matInput [matDatepicker]="startDate"  [min]="todayDate" placeholder="Start Date">
+        <input matInput [matDatepicker]="startDate"  [min]="todayDate" placeholder="Start Date" formControlName="startDate">
         <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
         <mat-datepicker #startDate></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="outline" class="w-100">
         <mat-label>Due Date</mat-label>
-        <input matInput [matDatepicker]="dueDate" [min]="todayDate"  placeholder="Due Date">
+        <input matInput [matDatepicker]="dueDate" [min]="todayDate"  placeholder="Due Date" formControlName="dueDate">
         <mat-datepicker-toggle matIconSuffix [for]="dueDate"></mat-datepicker-toggle>
         <mat-datepicker #dueDate></mat-datepicker>
     </mat-form-field>
-    <mat-form-field  appearance="outline" class="w-100">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>attachment</mat-label>
+      <input matInput placeholder="attachment" formControlName="attachment">
+    </mat-form-field>
+    <!-- <mat-form-field  appearance="outline" class="w-100">
     <div>
       <mat-label>Attachment</mat-label>
       <mat-toolbar>
-        <!-- Display files names -->
-        <input matInput  name="name" [(ngModel)]="fileAttr" readonly />
-        <!-- Browse Button -->
+        <input matInput  name="name" [(ngModel)]="fileAttr" readonly  />
         <button mat-flat-button color="primary">Browse File</button>
       </mat-toolbar>
-      <!-- Fetch selected filed on change -->
       <input
         type="file"
         #fileInput
@@ -34,11 +36,25 @@
         name="uploadFile"
         multiple="multiple"
         accept="image/*"
+        formControlName="attachment"
       />
     </div>
-  </mat-form-field>
+    </mat-form-field> -->
 </div>
 <div mat-dialog-actions class="float-right">
-  <button mat-raised-button (click)="onNoClick()" >Cancel</button>
-  <button mat-raised-button [mat-dialog-close]="data.animal" cdkFocusInitial color="primary">Submit</button>
+  <button 
+  mat-raised-button 
+  (click)="onClose()">
+    Cancel
+  </button>
+  <button 
+    mat-raised-button 
+    cdkFocusInitial 
+    color="primary" 
+    type="button" 
+    (click)="onSubmit()">
+    Submit
+  </button>
 </div>
+</div>
+
