@@ -37,14 +37,3 @@ export function recordReducer(state, action) {
     console.log('reducer', _recordsReducer(state, action));
     return _recordsReducer(state, action);
 }
-
-// on(deletePost, (state, {id}) => {
-
-//     const updatePosts = state.posts.filter(post => {
-//         return post.id !== id;
-//     })
-//     return {
-//         ...state,
-//         posts: updatePosts
-//     }
-// })
