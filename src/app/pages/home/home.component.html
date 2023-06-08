@@ -8,7 +8,6 @@
     </mat-form-field>
 </div>
 
-<button mat-stroked-button (click)="openSnackBar('test', '1')">Show snack-bar</button>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -41,8 +40,8 @@
         <button mat-icon-button (click)="openAddEditRecordDialog(element.id)">
           <mat-icon>launch</mat-icon>        
         </button>
-        <button mat-icon-button>
-          <mat-icon color="warn">delete</mat-icon>
+        <button mat-icon-button (click)="onDeleteRecord(element.id, element.title)">
+          <mat-icon color="warn" >delete</mat-icon>
         </button>
       </td>
     </ng-container>

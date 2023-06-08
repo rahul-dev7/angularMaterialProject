@@ -1,7 +1,7 @@
 export interface RecordModel {
-    id?: number;
+    id?: string;
     title: string;
     startDate: string;
     dueDate: string;
-    attachment: Object;
+    attachment: string;
 }
