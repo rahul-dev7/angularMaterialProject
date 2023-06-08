@@ -141,8 +141,6 @@ export class AddEditRecordComponent implements OnInit, OnDestroy {
 
     convertDateFormat(date) {
       return date.split('-').reverse().join('-');
-     // return date.split('-').reverse().join('-');
-      // return array.reverse();
     }
 
 

@@ -1,12 +1,9 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { RecordsState } from "./record.state";
 
-// const getRecordsState = createFeatureSelector<RecordState>('records');
-const Test = 1000;
- const getRecordsState = createFeatureSelector<RecordsState>('records');
+const getRecordsState = createFeatureSelector<RecordsState>('records');
 
 export const getRecords = createSelector(getRecordsState, (state) => {
-    console.log( 'sjsjsj');
     return state.records;
 });
 

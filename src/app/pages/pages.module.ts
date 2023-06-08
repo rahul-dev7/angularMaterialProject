@@ -8,11 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './components/header/header.component';
 import { AddEditRecordComponent } from './add-edit-record/add-edit-record.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StoreModule } from '@ngrx/store';
-import { appReducer } from './store/app.state';
-
-// import { recordReducer } from './store/records.reducer';
-
 
 @NgModule({
   declarations: [
